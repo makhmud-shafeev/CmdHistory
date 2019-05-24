@@ -1,0 +1,10 @@
+sfdx force:org:list
+sfdx force:org:list --verbose
+sfdx force:auth:logout --all
+sfdx force:project:create --projectname mapackage
+sfdx force:auth:web:login -d -a DevHub
+sfdx force:mdapi:retrieve -s -r ./mdapipkg -u vasyapupkin@google.com -p "My package"
+sfdx force:mdapi:retrieve -s -r ./mdapipkg -u <username> -p <package name>
+sfdx force:package:installed:list -u <username>
+sfdx force:mdapi:retrieve -s -r ./mdapipkg -u <username> -p "My package"
+sfdx force:mdapi:convert -r mdapipkg/history sfdx
